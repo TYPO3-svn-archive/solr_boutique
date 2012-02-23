@@ -1,0 +1,22 @@
+plugin.tx_solrboutique {
+	view {
+		# cat=plugin.tx_solrboutique/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:solr_boutique/Resources/Private/Templates/
+		# cat=plugin.tx_solrboutique/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:solr_boutique/Resources/Private/Partials/
+		# cat=plugin.tx_solrboutique/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:solr_boutique/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_solrboutique//a; type=int+; label=Default storage PID
+		storagePid =
+	}
+
+	cssTemplate = typo3conf/ext/solr_boutique/Resources/Public/css/singleProductView.css
+
+	singlePid = 0
+}
+
+plugin.tx_solr {
+	solrBoutiqueListViewPid = 0
+}

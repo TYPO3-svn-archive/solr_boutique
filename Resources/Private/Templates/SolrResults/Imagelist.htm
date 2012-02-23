@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Template for the search results view for EXT:solr</title>
+</head>
+<body>
+
+<!-- ###SOLR_SEARCH### begin -->
+
+<!-- ###SOLR_SEARCH_FORM### begin -->
+<!-- ###SOLR_SEARCH_FORM### end -->
+
+<div class="sub-columns tx-solr-results">
+	<div class="column left tx-solr-results-functions">
+		<!-- ###SOLR_SEARCH_FACETING### begin -->
+		<div class="tx-solr-faceting">
+			<!-- ###USED_FACETS### begin -->
+			<div class="tx-solr-facets-in-use">
+				<h3>###LLL:faceting_resultsNarrowedBy###</h3>
+				<ul>
+					<!-- ###LOOP:FACETS_IN_USE### begin -->
+					<!-- ###LOOP_CONTENT### -->
+					<li>
+						<a href="###REMOVE_FACET.url###" rel="nofollow">###REMOVE_FACET.text###</a>
+					</li>
+					<!-- ###LOOP_CONTENT### -->
+					<!-- ###LOOP:FACETS_IN_USE### end -->
+				</ul>
+				<div class="clear"><!--  --></div>
+			</div>
+			<!-- ###USED_FACETS### end -->
+
+			<!-- ###AVAILABLE_FACETS### begin -->
+			<div class="tx-solr-facets-available">
+				<ul class="facets">
+					<!-- ###SINGLE_FACET### begin -->
+					<li class="facet facet-###FACET.name###">
+						<h3>###FACET.label###</h3>
+						<ul>
+							<!-- ###SINGLE_FACET_OPTION### begin -->
+							<!-- ###LOOP:FACET_LINKS### begin -->
+							<!-- ###LOOP_CONTENT### -->
+							<li class="###FACET_LINK.HIDDEN###">
+								<a href="###FACET_LINK.URL###" rel="nofollow">###CROP:###FACET_LINK.TEXT###|30###</a> (###FACET_LINK.COUNT###)
+							</li>
+							<!-- ###LOOP_CONTENT### -->
+							<!-- ###LOOP:FACET_LINKS### end -->
+							<!-- ###SINGLE_FACET_OPTION### end -->
+							###FACET.showAllLink###
+						</ul>
+					</li>
+					<!-- ###SINGLE_FACET### end -->
+				</ul>
+			</div>
+			<!-- ###AVAILABLE_FACETS### end -->
+		</div>
+		<!-- ###SOLR_SEARCH_FACETING### end -->
+	</div>
+
+
+	<!-- ###SOLR_SEARCH_RESULTS### begin -->
+	<div class="two-colums tx-solr-results-list">
+		<ol start="###RESULTS.OFFSET###" class="tx-solr-results-list images">
+			<!-- ###LOOP:RESULT_DOCUMENTS### begin -->
+			<!-- ###LOOP_CONTENT### -->
+			<li class="results-entry ###ODD_EVEN:###LOOP_CURRENT_ITERATION_COUNT######">
+				<a href="###RESULT_DOCUMENT.URL###" title="###RESULT_DOCUMENT.TITLE###">
+					<img src="uploads/tx_solrboutique/###RESULT_DOCUMENT.IMAGE_stringS###" alt="###RESULT_DOCUMENT.TITLE###" />
+				</a>
+			</li>
+			<!-- ###LOOP_CONTENT### -->
+			<!-- ###LOOP:RESULT_DOCUMENTS### end -->
+			<li class="clear"><!--  --></li>
+		</ol>
+		<div class="tx-pagebrowse-pageless"></div>
+
+		###RESULTS.PAGEBROWSER###
+	</div>
+	<!-- ###SOLR_SEARCH_RESULTS### end -->
+
+	<!-- ###SOLR_SEARCH_NO_RESULTS### begin -->
+	<div class="two-colums tx-solr-results-nothingfound">
+		###NO_RESULTS.NOTHING_FOUND###
+	</div>
+	<!-- ###SOLR_SEARCH_NO_RESULTS### end -->
+	<div class="clear"><!--  --></div>
+</div>
+
+<!-- ###SOLR_SEARCH### end -->
+
+
+
+<!-- ###SOLR_SEARCH_UNAVAILABLE### begin -->
+	###LLL:searchUnavailable###
+<!-- ###SOLR_SEARCH_UNAVAILABLE### end -->
+
+<!-- ###SOLR_SEARCH_ERROR### begin -->
+	###LLL:searchFailed###
+<!-- ###SOLR_SEARCH_ERROR### end -->
+
+</body>
+</html>

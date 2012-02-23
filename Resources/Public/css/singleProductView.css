@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.solr-boutique-image {
+	float: left;
+	margin: 0px 30px 15px 0px;
+}
+
+.solr-boutique-info {
+
+}
+
+.solr-boutique-description {
+	clear:both;
+}
+
+.solr-boutique-price-title {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.solr-boutique-price-value {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.solr-boutique-info-title {
+	font-weight: bold;
+}
+
+.solr-boutique-info-value {
+	margin-bottom: 8px;
+}

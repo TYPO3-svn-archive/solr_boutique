@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'solr_boutique'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct">Solr Boutique Product</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.title">Title</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.description">Description</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.manufacturer">Manufacturer</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.keywords">Keywords</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.color">Color</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.price">Price</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.image">Image</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.size">Size</label>
+			<label index="tx_solrboutique_domain_model_solrboutiqueproduct.categories">Categories</label>
+			<label index="tx_solrboutique_domain_model_solrboutiquecategory">Solr Boutique Category</label>
+			<label index="tx_solrboutique_domain_model_solrboutiquecategory.title">Title</label>
+			<label index="tx_solrboutique_domain_model_solrboutiquecategory.description">Description</label>
+		</languageKey>
+	</data>
+</T3locallang>

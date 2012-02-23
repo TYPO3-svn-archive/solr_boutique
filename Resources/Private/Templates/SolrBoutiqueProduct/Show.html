@@ -1,0 +1,76 @@
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<div class="csc-header csc-header-n1">
+	<h1 class="csc-firstHeader">{solrBoutiqueProduct.title}</h1>
+</div>
+
+
+<f:flashMessages />
+
+	<div class="solr-boutique-image">
+		<img src="uploads/tx_solrboutique/{solrBoutiqueProduct.image}" alt="{solrBoutiqueProduct.title}" />
+	</div>
+
+	<div class="solr-boutique-info">
+		<div class="solr-boutique-price-title">
+			<f:translate key="tx_solrboutique_domain_model_solrboutiqueproduct.price" />
+		</div>
+		<div class="solr-boutique-price-value">
+			<f:format.currency currencySign="&euro;">{solrBoutiqueProduct.price}</f:format.currency>
+		</div>
+
+		<div class="solr-boutique-info-title">
+			<f:translate key="tx_solrboutique_domain_model_solrboutiqueproduct.manufacturer" />
+		</div>
+		<div class="solr-boutique-info-value">
+			{solrBoutiqueProduct.manufacturer}
+		</div>
+
+		<div class="solr-boutique-info-title">
+			<f:translate key="tx_solrboutique_domain_model_solrboutiqueproduct.color" />
+		</div>
+		<div class="solr-boutique-info-value">
+			{solrBoutiqueProduct.color}
+		</div>
+
+		<div class="solr-boutique-info-title">
+			<f:translate key="tx_solrboutique_domain_model_solrboutiqueproduct.size" />
+		</div>
+		<div class="solr-boutique-info-value">
+			{solrBoutiqueProduct.size}
+		</div>
+
+		<div class="solr-boutique-info-title">
+			<f:translate key="tx_solrboutique_domain_model_solrboutiqueproduct.categories" />
+		</div>
+		<div class="solr-boutique-info-value">
+			<f:for each="{solrBoutiqueProduct.categories}" as="category">
+				<div>{category.title}</div>
+			</f:for>
+		</div>
+	</div>
+
+	<div class="clear"> </div>
+
+<div class="solr-boutique-description">
+	<b><f:translate key="tx_solrboutique_domain_model_solrboutiqueproduct.description" /></b>
+</div>
+<div>
+	<f:format.html parseFuncTSPath="lib.parseFunc">{solrBoutiqueProduct.description}</f:format.html>
+</div>
+
+</f:section>
+

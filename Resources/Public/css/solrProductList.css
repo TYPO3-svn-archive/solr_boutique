@@ -1,0 +1,108 @@
+@CHARSET "UTF-8";
+
+.column.left.tx-solr-results-functions {
+	float: left;
+	padding: 5px 0px 0px 0px;
+	width: 170px;
+}
+
+.two-colums.tx-solr-results-list {
+	margin: 0px 0px 0px 170px;
+	padding: 0px 0px 0px 20px;
+}
+
+.two-colums.tx-solr-results-list li {
+	list-style-type: none;
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+
+.two-colums.tx-solr-results-list img {
+	width: 200px;
+	height: 200px;
+	margin: 5px;
+	border: 1px solid #999;
+}
+
+.tx-solr-faceting {
+	display: block;
+	zoom: 1;
+}
+
+.tx-solr-faceting h3 {
+	background-color: #494949;
+	color: #fff;
+	padding: 6px 10px;
+	margin: 0px;
+}
+
+.tx-solr-faceting .tx-solr-facets-in-use {
+	margin: 0px 0px 20px 0px;
+	background-color: #ddd;
+	border: 1px solid #bbb;
+}
+
+.tx-solr-faceting .tx-solr-facets-in-use a {
+	background-color: #ccc;
+	border: 1px solid #aaa;
+	font-weight: normal;
+	display: block;
+	padding: 3px 5px 3px 5px;
+}
+
+.tx-solr-faceting .tx-solr-facets-in-use ul {
+	padding: 10px 0px 10px 0px;
+}
+
+.tx-solr-faceting .tx-solr-facets-in-use li {
+	list-style-type: none;
+	margin: 5px 10px 5px 15px;
+}
+
+.tx-solr-faceting li.facet {
+	color: #6D5246;
+	margin: 0px 0px 20px 0px;
+	background-color: #ddd;
+	border: 1px solid #bbb;
+	list-style-type: none;
+}
+
+.tx-solr-faceting ul {
+	margin: 0px;
+}
+
+.tx-solr-faceting a {
+	color: #6D5246;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.tx-solr-faceting .tx-solr-facets-available {
+	clear: both;
+}
+
+.tx-solr-faceting .tx-solr-facets-available a {
+	padding: 0px 0px 0px 18px;
+}
+
+.tx-solr-faceting .tx-solr-facets-available a.tx-solr-facet-show-all {
+	display: none;
+	background-image: none;
+	color: #88dd88;
+	padding: 0px 0px 0px 5px;
+	outline: none;
+}
+
+.tx-solr-faceting .tx-solr-facets-available a.tx-solr-facet-show-all:hover {
+	color: #630;
+}
+
+.tx-solr-faceting .tx-solr-facets-available .facets .facet {
+	border-top: 1px solid #bbb;
+}
+
+.tx-solr-faceting .tx-solr-facets-available .facets .facet li {
+	list-style-type: none;
+	margin: 5px;
+}

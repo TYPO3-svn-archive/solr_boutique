@@ -1,0 +1,148 @@
+plugin.tx_solrboutique {
+	view {
+		templateRootPath = {$plugin.tx_solrboutique.view.templateRootPath}
+		partialRootPath = {$plugin.tx_solrboutique.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_solrboutique.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_solrboutique.persistence.storagePid}
+	}
+	settings {
+		cssTemplate = {$plugin.tx_solrboutique.cssTemplate}
+	}
+}
+
+page.includeCSS {
+	cssSolrListViewTemplate = typo3conf/ext/solr_boutique/Resources/Public/css/solrProductList.css
+}
+
+# Includes the solr_boutique product data to the Solr Index
+plugin.tx_solr {
+	index {
+		queue {
+			solr_boutique = 1
+			solr_boutique {
+
+				table = tx_solrboutique_domain_model_solrboutiqueproduct
+
+				fields {
+					title = title
+
+					content = SOLR_CONTENT
+					content {
+						field = description
+					}
+
+					manufacturer_stringS = manufacturer
+
+					color_stringS = color
+
+					price_floatS = price
+
+					image_stringS = image
+
+					size_stringS = size
+
+					category_stringM = SOLR_RELATION
+					category_stringM {
+						localField = categories
+						multiValue = 1
+					}
+
+					keywords = SOLR_MULTIVALUE
+					keywords {
+						field = keywords
+					}
+
+					url = TEXT
+					url {
+						typolink.parameter = {$plugin.tx_solrboutique.singlePid}
+						typolink.additionalParams = &tx_solrboutique_productinfo[solrBoutiqueProduct]={field:uid}&no_cache=1
+						typolink.additionalParams.insertData = 1
+						typolink.returnLast = url
+						typolink.useCacheHash = 1
+					}
+
+					sortTitle_stringS  = title
+				}
+
+#				attachments {
+#					fields = news_files
+#				}
+			}
+		}
+	}
+}
+
+# Product List View of the products
+[globalVar = TSFE:id = {$plugin.tx_solr.solrBoutiqueListViewPid}]
+plugin.tx_solr{
+	templateFiles.results = EXT:solr_boutique/Resources/Private/Templates/SolrResults/Imagelist.htm
+
+	search {
+		targetPage = {$plugin.tx_solr.solrBoutiqueListViewPid}
+		initializeWithEmptyQuery = 1
+		showResultsOfInitialEmptyQuery = 1
+
+
+		query.filter {
+			boutiqueProduct = type:tx_solrboutique_domain_model_solrboutiqueproduct
+		}
+
+
+		sorting {
+			defaultOrder = desc
+
+			fields >
+			fields {
+				created = 1
+				created {
+					label = sorting_created
+				}
+
+				relevancy = 1
+				relevancy {
+					label = sorting_relevancy
+				}
+
+				sortTitle = 1
+				sortTitle {
+					label = sorting_title
+				}
+
+				type = 1
+				type {
+					label = sorting_type
+				}
+			}
+		}
+
+		faceting = 1
+		faceting {
+			facets {
+				type >
+
+				size {
+					label = Size
+					field = size_stringS
+				}
+
+				manufacturer {
+					label = Manufacturer
+					field = manufacturer_stringS
+				}
+
+				category {
+					label = Category
+					field = category_stringM
+				}
+
+				color {
+					label = Color
+					field = color_stringS
+				}
+			}
+		}
+	}
+}
+[global]
